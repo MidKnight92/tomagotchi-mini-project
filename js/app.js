@@ -47,14 +47,14 @@ const game = {
 		// console.log(`${pet['name']} age is ${petsAge} years old`);
 	},
 	feed: function(){ 
-		game.pet['hunger']--;
+		this.pet['hunger'] --;
 	},
-	// turnOffLights: function(){
-
-	// },
-	// playTime: function(){
-
-	// },
+	turnOffLights: function(){
+		this.pet['sleepiness'] --;
+	},
+	letsPlay: function(){
+		this.pet['boredom'] -= 0.5;
+	},
 	// death: function(){
 
 	// },
@@ -62,7 +62,7 @@ const game = {
 		this.pet['hunger'] += 2;
 	},
 	becomeSleepy: function(){
-		this.pet['sleepiness'] ++ ;
+		this.pet['sleepiness'] ++;
 	},
 	becomeBored: function(){
 		this.pet['boredom'] += 0.5;
@@ -89,20 +89,11 @@ $('#feed').on('click', (e) => {
 
 // This button will run the turnOffLights function
 $('#lightsOff').on('click', (e) => {
-	//invoke function
+	game.turnOffLights();
 });
 
 // This button will run the playtime function
-$('#playTime').on('click', (e) => {
-	//invoke function
+$('#letsPlay').on('click', (e) => {
+	game.letsPlay();
 });
 
-
-// ----------------- stuff to delete eventually --------
-
-// $('#on').on('click', (e) => {
-// 	// get name user typed in from the DOM
-// 	console.log($('#input-box').val());
-// 	const userInput = $('#input-box').val();
-// 	game.start(userInput);
-// });
