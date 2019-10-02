@@ -1,4 +1,6 @@
 // console.log('this working???');
+
+// This places an event listner on the "on" button and starts the game
 $('#on').on('click', (e) => {
 	game.start();
 });
@@ -14,7 +16,7 @@ class Tomagotchi {
 		this.sleepiness = 1;
 		this.boredom = 1;
 	};
-	// feed: function(){ // increase t hunger level
+	// feed: function(){ // increase T hunger level
 
 	// };
 	// turnOffLights: function(){
@@ -30,7 +32,10 @@ console.log(Tpet);
 //I want the game to start after the user puts input
 const game = {
 	pet: Tpet,
-	time: 10,
+	time: 0,
+	// after on is clicked it will prompt user to pick a name for Tomagotchi 
+		//  ~ ~ I would like for it to display that name in an h2 tag
+		// call setTimer
 	start: function(){
 	const userInput = prompt(`Name your Tomagotchi`);
 	console.log(`Welcome ${userInput}`);
@@ -38,27 +43,27 @@ const game = {
 	// $(userInput).text();
 	this.setTimer()
   },
-  setTimer: function(){
+  // I want the timer to increment up 
+  	// as time increments up I want T's age to increment up
+  	
+    setTimer: function(){
   	const $timer = $('#timer');
   	const interval = setInterval (() => {
   		if (this.time === 0) {
-  		  clearInterval(interval);	
-  		} else {
-  		  Tpet(age)++
-  		}
-
-  	$timer.text(`timer: ${this.time}s`)
-  }, 1000)
+  		  this.time ++ ;	
+  		  // Tpet(age)++
+  		} 
+	  	$timer.text(`timer: ${this.time}s`)
+	  }, 1000)
+	}	
 }	
-}	
-//button starts game
 
 
 
 
 
 
-// game.setTimer();
 
+// clearInterval(interval);
 
 // Math.floor(Math.random() * 10) + 1

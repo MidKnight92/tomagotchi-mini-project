@@ -1,0 +1,28 @@
+body {
+	background-color: pink;
+}
+
+h1, h2, h3 {
+	color: blue;
+	text-align: center;
+}
+
+h1 {
+	font-size: 45px;
+	font-weight: bold;
+	background-color: orange;
+}
+
+.flex-container{
+	display: flex;
+	justify-content: center;
+	background-color: purple;
+}
+button { 
+	margin: 10px;
+	background-color: yellow;
+	padding: 10px;
+	border-radius: 50%;
+	font-size: 15px;
+	font-weight: bold;
+}
