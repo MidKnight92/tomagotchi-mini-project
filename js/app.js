@@ -27,7 +27,7 @@ const game = {
 	  	const $timer = $('#timer');
 	  	const interval = setInterval (() => {
 	  		this.time ++ ;
-	  		console.log(this.pet['age']++);
+	  		this.pet['age']++
 	  		$timer.text(`timer: ${this.time}s`)
 	  		if(this.time % 10 === 0) {
 	  			this.becomeHungery();
@@ -39,6 +39,7 @@ const game = {
 	  			this.becomeBored();
 	  			console.log(this.pet);
 	  		}
+	  		this.death(interval);
 	  	}, 1000)
 	  	// this.showStats();
 	},
@@ -64,7 +65,8 @@ const game = {
 	becomeBored: function(){
 		this.pet['boredom'] += 0.5;
 	},
-	death: function(){
+	death: function(interval){
+		
 		if ((this.pet['hunger'] >= 10) || (this.pet['sleepiness'] >= 10) || (this.pet['boredom'] >= 10)) {
 			clearInterval(interval);
 			console.log('GAME OVER');
