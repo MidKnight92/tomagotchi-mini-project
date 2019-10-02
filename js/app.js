@@ -55,9 +55,6 @@ const game = {
 	letsPlay: function(){
 		this.pet['boredom'] -= 0.5;
 	},
-	// death: function(){
-
-	// },
 	becomeHungery: function(){
 		this.pet['hunger'] += 2;
 	},
@@ -66,10 +63,16 @@ const game = {
 	},
 	becomeBored: function(){
 		this.pet['boredom'] += 0.5;
+	},
+	death: function(){
+		if ((this.pet['hunger'] >= 10) || (this.pet['sleepiness'] >= 10) || (this.pet['boredom'] >= 10)) {
+			clearInterval(interval);
+			console.log('GAME OVER');
+		}
 	}
 }	
 
-// clearInterval(interval);
+
 
 
 //	------------------------- Buttons (Event Listners) ------------
