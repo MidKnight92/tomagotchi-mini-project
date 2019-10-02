@@ -30,20 +30,33 @@ const game = {
 		const newTom = new Tomagotchi(name);
 		this.pet = newTom;
 		console.log(newTom);
-		this.setTimer()
+		this.setTimer(newTom)
 	},
   	// I want the timer to increment up 
   	// to call an age method that will increase the tomagotchis age ever interval
   	// I want to invoke three different methods that will increase the hunger, sleepiness, and boredom at diffent times
-    setTimer: function(){
+    setTimer: function(pet){
 	  	const $timer = $('#timer');
 	  	const interval = setInterval (() => {
 	  		this.time ++ ;
-	  		const petsAge = this.pet['age']++;
-	  		console.log(`${this.pet['name']} age is ${petsAge} years old`);
+	  		console.log(this.pet['age']++);
 	  		$timer.text(`timer: ${this.time}s`)
+	  		if(this.time % 15 === 0) {
+	  			this.becomeHungery()
+	  			console.log(this.pet);
+	  		}
 	  	}, 1000)
-	}	
+	  	// this.showStats();
+	},
+	showStats: function(){
+		$('#hunger').text(`Hunger: ${this.pet['hunger']}`);
+		// console.log(`${pet['name']} age is ${petsAge} years old`);
+	},
+	becomeHungery: function(){
+		this.pet['hunger'] += 2;
+		console.log(hunger);
+	}
+
 }	
 
 // clearInterval(interval);
@@ -51,10 +64,11 @@ const game = {
 
 //	------------------------- Buttons (Event Listners) ------------
 // This places an event listner on the "on" button and starts the game
-$('#on').on('click', (e) => {
+$('form').on('submit', (e) => {
 	// get name user typed in from the DOM
 	console.log($('#input-box').val());
 	const userInput = $('#input-box').val();
+	e.preventDefault();
 	game.start(userInput);
 });
 
@@ -72,3 +86,13 @@ $('#lightsOff').on('click', (e) => {
 $('#playTime').on('click', (e) => {
 	//invoke function
 });
+
+
+// ----------------- stuff to delete eventually --------
+
+// $('#on').on('click', (e) => {
+// 	// get name user typed in from the DOM
+// 	console.log($('#input-box').val());
+// 	const userInput = $('#input-box').val();
+// 	game.start(userInput);
+// });
