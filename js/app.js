@@ -1,5 +1,7 @@
 // console.log('this working???');
-
+$('#on').on('click', (e) => {
+	game.start();
+});
 
 
 
@@ -22,8 +24,12 @@ class Tomagotchi {
 
 	// }
 };
+const Tpet =  new Tomagotchi('tpet', 0);
+console.log(Tpet);
+
 //I want the game to start after the user puts input
 const game = {
+	pet: Tpet,
 	time: 10,
 	start: function(){
 	const userInput = prompt(`Name your Tomagotchi`);
@@ -38,7 +44,7 @@ const game = {
   		if (this.time === 0) {
   		  clearInterval(interval);	
   		} else {
-  		  Tomagotchi.age ++
+  		  Tpet(age)++
   		}
 
   	$timer.text(`timer: ${this.time}s`)
@@ -51,7 +57,7 @@ const game = {
 
 
 
-game.start();
+
 // game.setTimer();
 
 
