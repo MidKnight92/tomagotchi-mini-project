@@ -69,9 +69,10 @@ const game = {
 		this.pet['boredom'] += 0.5;
 	},
 	dies: function(interval){
-		
 		if ((this.pet['hunger'] >= 10) || (this.pet['sleepiness'] >= 10) || (this.pet['boredom'] >= 10)) {
 			clearInterval(interval);
+			const $gameOver = $('<h1/>').text('GAME OVER');
+			$gameOver.appendTo('#sleepiness');
 			console.log('GAME OVER');
 		}
 	}
