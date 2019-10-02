@@ -1,8 +1,3 @@
-// console.log('this working???');
-
-
-
-// ----------------  Tman and Game object below --------
 
 class Tomagotchi {
 	constructor(name){
@@ -25,21 +20,13 @@ class Tomagotchi {
 
 	// };
 };
-// const Tpet =  new Tomagotchi('tpet', 0);
-// console.log(Tpet);
 
 //I want the game to start after the user puts input
 const game = {
-	// pet: Tpet,
 	time: 0,
-	// after on is clicked it will prompt user to pick a name for Tomagotchi 
 		//  ~ ~ I would like for it to display that name in an h2 tag
 		// call setTimer
 	start: function(name){
-		// const userInput = $('#input-box');
-		// console.log(`Welcome ${userInput}`);
-		// // I want to take users input and append it to the dom
-		// // $(userInput).text();
 		const newTom = new Tomagotchi(name);
 		this.pet = newTom;
 		console.log(newTom);
@@ -52,23 +39,17 @@ const game = {
 	  	const $timer = $('#timer');
 	  	const interval = setInterval (() => {
 	  		this.time ++ ;
-	  		// console.log(Tpet['age']++);
-
+	  		const petsAge = this.pet['age']++;
+	  		console.log(`${this.pet['name']} age is ${petsAge} years old`);
 	  		$timer.text(`timer: ${this.time}s`)
 	  	}, 1000)
 	}	
 }	
 
-
-// const userInput = prompt(`Name your Tomagotchi`);
-// 	console.log(`Welcome ${userInput}`);
-
-
 // clearInterval(interval);
 
-// Math.floor(Math.random() * 10) + 1
 
-//	------------------------- Buttons (Event Listners) -------------------------
+//	------------------------- Buttons (Event Listners) ------------
 // This places an event listner on the "on" button and starts the game
 $('#on').on('click', (e) => {
 	// get name user typed in from the DOM
