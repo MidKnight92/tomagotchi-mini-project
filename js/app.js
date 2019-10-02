@@ -6,19 +6,7 @@ class Tomagotchi {
 		this.hunger = 1;
 		this.sleepiness = 1;
 		this.boredom = 1;
-	};
-	// feed: function(){ // increase T hunger level
-
-	// };
-	// turnOffLights: function(){
-
-	// };
-	// playTime: function(){
-
-	// };
-	// death: function(){
-
-	// };
+	}
 };
 
 //I want the game to start after the user puts input
@@ -55,9 +43,21 @@ const game = {
 	  	// this.showStats();
 	},
 	showStats: function(){
-		$('#hunger').text(`Hunger: ${this.pet['hunger']}`);
+		// $('#hunger').text(`Hunger: ${this.pet['hunger']}`);
 		// console.log(`${pet['name']} age is ${petsAge} years old`);
 	},
+	feed: function(){ 
+		game.pet['hunger']--;
+	},
+	// turnOffLights: function(){
+
+	// },
+	// playTime: function(){
+
+	// },
+	// death: function(){
+
+	// },
 	becomeHungery: function(){
 		this.pet['hunger'] += 2;
 	},
@@ -84,7 +84,7 @@ $('form').on('submit', (e) => {
 
 // This button will run the feed function
 $('#feed').on('click', (e) => {
-	//invoke feed function
+	game.feed();
 });
 
 // This button will run the turnOffLights function
