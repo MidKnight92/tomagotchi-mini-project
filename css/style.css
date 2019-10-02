@@ -11,12 +11,14 @@ h1 {
 	font-size: 45px;
 	font-weight: bold;
 	background-color: orange;
+	border-radius: 35%;
 }
 
 .flex-container{
 	display: flex;
 	justify-content: center;
 	background-color: purple;
+	border-radius: 45%;
 }
 button { 
 	margin: 10px;
@@ -25,4 +27,7 @@ button {
 	border-radius: 50%;
 	font-size: 15px;
 	font-weight: bold;
+}
+input {
+	position: center;
 }

@@ -41,8 +41,14 @@ const game = {
 	  		this.time ++ ;
 	  		console.log(this.pet['age']++);
 	  		$timer.text(`timer: ${this.time}s`)
-	  		if(this.time % 15 === 0) {
-	  			this.becomeHungery()
+	  		if(this.time % 10 === 0) {
+	  			this.becomeHungery();
+	  			console.log(this.pet);
+	  		} else if (this.time % 15 === 0) {
+	  			this.becomeSleepy();
+	  			console.log(this.pet);
+	  		} else {
+	  			this.becomeBored();
 	  			console.log(this.pet);
 	  		}
 	  	}, 1000)
@@ -54,9 +60,13 @@ const game = {
 	},
 	becomeHungery: function(){
 		this.pet['hunger'] += 2;
-		console.log(hunger);
+	},
+	becomeSleepy: function(){
+		this.pet['sleepiness'] ++ ;
+	},
+	becomeBored: function(){
+		this.pet['boredom'] += 0.5;
 	}
-
 }	
 
 // clearInterval(interval);
