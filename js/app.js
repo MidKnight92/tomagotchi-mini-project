@@ -42,8 +42,6 @@ const game = {
 	  			console.log(this.pet);
 	  			this.morph1();
 	  		}
-	  // 		const $div = $('div');
-			// $div.animate({left: '200px'}, 'slow');
 	  		this.showStats();
 	  		this.dies(interval);
 	  	}, 1000)	
@@ -80,10 +78,18 @@ const game = {
 			const $gameOver = $('<h1/>').text('GAME OVER');
 			$gameOver.appendTo('#sleepiness');
 			console.log('GAME OVER');
+			$('h4').css('text-align', 'center');
+			$('h4').text('You Lose');	
 		}
 	},
 	morph1: function() {
 		$('h4').css('color', 'yellow');
+		$('h4').text(`Big Man Tom ;-)`);
+		$('h4').animate({
+			width: '65%',
+			fontSize: '4em',
+			marginLeft: '20%'
+		});
 	},
 	morph2: function(){
 		$('h4').css('text-align', 'left');
