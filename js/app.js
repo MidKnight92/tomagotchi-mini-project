@@ -97,6 +97,7 @@ const game = {
 			fontSize: '3em',
 			marginLeft: '20%'
 		});
+		$('img').attr('src', 'images/rexToyStory.png');
 	},
 	morph2: function(){
 		$('h4').css('text-align', 'left');
@@ -110,7 +111,6 @@ const game = {
 	morph4: function(){
 		$('h4').css('text-align', 'right');
 		$('h4').text(`Big Man Rex :-() is bored`);
-		$('img').attr('src', 'images/toyStory.png');
 	}
 }	
 
