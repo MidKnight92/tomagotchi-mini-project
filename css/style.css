@@ -28,6 +28,9 @@ button {
 	font-size: 15px;
 	font-weight: bold;
 }
-input {
-	position: center;
+
+h4 {
+	text-align: center;
+	color: blue;
+	font-size: 40px;
 }

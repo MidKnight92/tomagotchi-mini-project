@@ -31,16 +31,19 @@ const game = {
 	  		$timer.text(`Timer: ${this.time}s`)
 	  		if(this.time % 10 === 0) {
 	  			this.becomeHungery();
+	  			this.morph2();
 	  			console.log(this.pet);
 	  		} else if (this.time % 15 === 0) {
 	  			this.becomeSleepy();
+	  			this.morph3();
 	  			console.log(this.pet);
 	  		} else {
 	  			this.becomeBored();
 	  			console.log(this.pet);
+	  			this.morph1();
 	  		}
-	  		const $div = $('div');
-			$div.animate({left: '200px'}, 'slow');
+	  // 		const $div = $('div');
+			// $div.animate({left: '200px'}, 'slow');
 	  		this.showStats();
 	  		this.dies(interval);
 	  	}, 1000)	
@@ -78,6 +81,15 @@ const game = {
 			$gameOver.appendTo('#sleepiness');
 			console.log('GAME OVER');
 		}
+	},
+	morph1: function() {
+		$('h4').css('color', 'yellow');
+	},
+	morph2: function(){
+		$('h4').css('text-align', 'left');
+	},
+	morph3: function(){
+		$('h4').css('text-align', 'right');
 	}
 }	
 
