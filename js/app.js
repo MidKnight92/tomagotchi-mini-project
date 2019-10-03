@@ -37,10 +37,13 @@ const game = {
 	  			this.becomeSleepy();
 	  			this.morph3();
 	  			console.log(this.pet);
-	  		} else {
+	  		} else if (this.time % 5 === 0) {
 	  			this.becomeBored();
 	  			console.log(this.pet);
+	 			this.morph4();
+	  		} else {
 	  			this.morph1();
+	  			console.log(this.pet);
 	  		}
 	  		this.showStats();
 	  		this.dies(interval);
@@ -55,22 +58,25 @@ const game = {
 	},
 	feed: function(){ 
 		this.pet['hunger'] --;
+		$('h4').text('Pizza is here! Time to eat! (>');
 	},
 	turnOffLights: function(){
 		this.pet['sleepiness'] --;
-		$('body').css('backgroundColor', 'black')
+		$('body').css('backgroundColor', 'black');
 	},
 	letsPlay: function(){
 		this.pet['boredom'] -= 0.5;
+		$('h4').text('Let\'s play ball!!');
 	},
 	becomeHungery: function(){
 		this.pet['hunger'] += 2;
 	},
 	becomeSleepy: function(){
 		this.pet['sleepiness'] ++;
+		$('body').css('backgroundColor','pink');
 	},
 	becomeBored: function(){
-		this.pet['boredom'] += 0.5;
+		this.pet['boredom'] ++;
 	},
 	dies: function(interval){
 		if ((this.pet['hunger'] >= 10) || (this.pet['sleepiness'] >= 10) || (this.pet['boredom'] >= 10)) {
@@ -93,13 +99,17 @@ const game = {
 	},
 	morph2: function(){
 		$('h4').css('text-align', 'left');
+		$('h4').text(`Big Man Tom :-| is hungry`);
 	},
 	morph3: function(){
+		$('h4').css('text-align', 'center');
+		$('h4').text(`Big Man Tom :-[] is sleepy`);
+	},
+	morph4: function(){
 		$('h4').css('text-align', 'right');
+		$('h4').text(`Big Man Tom :-() is bored`);
 	}
 }	
-
-
 
 
 //	------------------------- Buttons (Event Listners) ------------
@@ -125,5 +135,6 @@ $('#lightsOff').on('click', (e) => {
 // This button will run the playtime function
 $('#letsPlay').on('click', (e) => {
 	game.letsPlay();
+
 });
 
