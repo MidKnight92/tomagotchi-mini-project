@@ -94,7 +94,7 @@ const game = {
 		$('h4').text(`Big Man Rex ;-)`);
 		$('h4').animate({
 			width: '65%',
-			fontSize: '4em',
+			fontSize: '3em',
 			marginLeft: '20%'
 		});
 	},

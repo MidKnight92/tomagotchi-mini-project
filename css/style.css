@@ -8,7 +8,7 @@ h1, h2, h3 {
 }
 
 h1 {
-	font-size: 45px;
+	font-size: 30px;
 	font-weight: bold;
 	background-color: orange;
 	border-radius: 35%;
@@ -32,12 +32,12 @@ button {
 h4 {
 	text-align: center;
 	color: blue;
-	font-size: 40px;
+	font-size: 30px;
 }
 
 img {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	width: 25%;
+	width: 15%;
 }
