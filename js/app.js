@@ -85,12 +85,13 @@ const game = {
 			$gameOver.appendTo('#sleepiness');
 			console.log('GAME OVER');
 			$('h4').css('text-align', 'center');
-			$('h4').text('You Lose');	
+			$('h4').text('You Lose');
+			$('img').attr('src', 'images/dead.jpg');	
 		}
 	},
 	morph1: function() {
 		$('h4').css('color', 'yellow');
-		$('h4').text(`Big Man Tom ;-)`);
+		$('h4').text(`Big Man Rex ;-)`);
 		$('h4').animate({
 			width: '65%',
 			fontSize: '4em',
@@ -99,15 +100,17 @@ const game = {
 	},
 	morph2: function(){
 		$('h4').css('text-align', 'left');
-		$('h4').text(`Big Man Tom :-| is hungry`);
+		$('h4').text(`Big Man Rex :-| is hungry`);
+		// $('img').attr('src', 'images/pizzaTime.jpg');
 	},
 	morph3: function(){
 		$('h4').css('text-align', 'center');
-		$('h4').text(`Big Man Tom :-[] is sleepy`);
+		$('h4').text(`Big Man Rex :-[] is sleepy`);
 	},
 	morph4: function(){
 		$('h4').css('text-align', 'right');
-		$('h4').text(`Big Man Tom :-() is bored`);
+		$('h4').text(`Big Man Rex :-() is bored`);
+		$('img').attr('src', 'images/toyStory.png');
 	}
 }	
 
