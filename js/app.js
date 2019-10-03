@@ -19,6 +19,9 @@ const game = {
 		this.pet = newTom;
 		console.log(newTom);
 		this.setTimer(newTom)
+		// const $img = $('<img/>')
+		// $img.attr({src:"../images/babyDino.jpg", title:'Baby Dino', alt: 'Image of Baby Dino'});
+		// $img.appendTo('#image');
 	},
   	// I want the timer to increment up 
   	// to call an age method that will increase the tomagotchis age ever interval
@@ -55,6 +58,7 @@ const game = {
 	},
 	turnOffLights: function(){
 		this.pet['sleepiness'] --;
+		$('body').css('backgroundColor', 'black')
 	},
 	letsPlay: function(){
 		this.pet['boredom'] -= 0.5;
